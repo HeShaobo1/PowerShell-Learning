@@ -1,0 +1,88 @@
+#Get-Help 
+
+PS E:\host> Get-Help Get-AzureRmVM -Detailed
+
+NAME
+    Get-AzureRmVM
+    
+SYNOPSIS
+    Gets the properties of a virtual machine.
+    
+    
+SYNTAX
+    Get-AzureRmVM [-ResourceGroupName] <String> [-Name] <String> [[-Status]] [-DefaultProfile <IAzureContextContainer>] [-DisplayHint {Compact | Expand}] [<CommonParameters>]
+    
+    Get-AzureRmVM [-NextLink] <Uri> [[-Status]] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+    
+    Get-AzureRmVM [-ResourceGroupName] <String> [[-Status]] [-DefaultProfile <IAzureContextContainer>] [<CommonParameters>]
+    
+    
+DESCRIPTION
+    The Get-AzureRmVM cmdlet gets the model view and instance view of an Azure virtual machine. The model view is the user specified properties of the virtual machine. The instance view is the instance level status of the virtual machine. Specify the 
+    Status parameter to get only the instance view of a virtual machine.
+    
+
+PARAMETERS
+    -DefaultProfile <IAzureContextContainer>
+        The credentials, account, tenant, and subscription used for communication with azure.
+        
+    -DisplayHint <DisplayHintType>
+        Determines how the virtual machine object is displayed.
+        
+        Valid values are:
+        
+        -- Compact: displays only top level properties
+        
+        -- Expand: displays all properties in all levels
+        
+    -Name <String>
+        Specifies the name of the virtual machine to get.
+        
+    -NextLink <Uri>
+        Specifies the next link.
+        
+    -ResourceGroupName <String>
+        Specifies the name of a resource group.
+        
+    -Status [<SwitchParameter>]
+        Indicates that this cmdlet gets only the instance view of the virtual machine.
+        
+    <CommonParameters>
+        This cmdlet supports the common parameters: Verbose, Debug,
+        ErrorAction, ErrorVariable, WarningAction, WarningVariable,
+        OutBuffer, PipelineVariable, and OutVariable. For more information, see 
+        about_CommonParameters (http://go.microsoft.com/fwlink/?LinkID=113216). 
+    
+    Example 1: Get model and instance view properties
+    
+    PS C:\> Get-AzureRmVM -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine07"
+    
+    This command gets the model view and instance view properties of the virtual machine named VirtualMachine07.
+    
+    
+    Example 2: Get instance view properties
+    
+    PS C:\> Get-AzureRmVM -ResourceGroupName "ResourceGroup11" -Name "VirtualMachine07" -Status
+    
+    This command gets properties of the virtual machine named VirtualMachine07. This command specifies the Status parameter. Therefore, the command gets only the instance view properties.
+    
+    
+    Example 3: Get properties for all virtual machines in a resource group
+    
+    PS C:\> Get-AzureRmVM -ResourceGroupName "ResourceGroup11"
+    
+    This command gets properties for all the virtual machines in the resource group named ResourceGroup11.
+    
+    
+    Example 4: Get all virtual machines in your subscription
+    
+    PS C:\> Get-AzureRmVM
+    
+    This command gets all the virtual machines in your subscription.
+    
+    
+REMARKS
+    To see the examples, type: "get-help Get-AzureRmVM -examples".
+    For more information, type: "get-help Get-AzureRmVM -detailed".
+    For technical information, type: "get-help Get-AzureRmVM -full".
+    For online help, type: "get-help Get-AzureRmVM -online"
