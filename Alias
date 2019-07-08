@@ -53,7 +53,7 @@ Creates or changes an alias for a cmdlet or other command in the current PowerSh
 思考问题：
 1.别名的生效环境是什么，什么情况下会失效？
 2.如果失效，如何创建永久别名？
-
+3.如何删除别名？
 
 
 思考答案：
@@ -61,4 +61,5 @@ Creates or changes an alias for a cmdlet or other command in the current PowerSh
 别名分为系统别名和用户自定义别名，使用 New-Alias, Set-Alias 更改的别名只能在当前的PowerShell Session 中生效。更改PowerShell Session 或者关闭后Alias 失效
 2.如果失效，如何创建永久别名？
 可以将别名写入$profile.
-
+3.如何删除别名？
+Remove-Item Alias:\g
