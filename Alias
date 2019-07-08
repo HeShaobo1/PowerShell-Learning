@@ -1,0 +1,53 @@
+PS E:\host> Get-Command *Alias*
+
+CommandType     Name                                               Version    Source                                                                                                                                                                             
+-----------     ----                                               -------    ------                                                                                                                                                                             
+Cmdlet          Export-Alias                                       3.1.0.0    Microsoft.PowerShell.Utility                                                                                                                                                       
+Cmdlet          Get-Alias                                          3.1.0.0    Microsoft.PowerShell.Utility                                                                                                                                                       
+Cmdlet          Import-Alias                                       3.1.0.0    Microsoft.PowerShell.Utility                                                                                                                                                       
+Cmdlet          New-Alias                                          3.1.0.0    Microsoft.PowerShell.Utility
+Cmdlet          Set-Alias                                          3.1.0.0    Microsoft.PowerShell.Utility 
+
+**************
+Export-Alias
+将当前的别名导出定义到文件
+Exports information about currently defined aliases to a file.
+
+PS E:\host> Export-Alias -Path 1.xml
+
+PS E:\host> cat .\1.xml
+# Alias File
+# Exported by : he.shaobo
+# Date/Time : Monday, July 8, 2019 2:55:26 PM
+# Computer : HESHAOBO-D-1
+"foreach","ForEach-Object","","ReadOnly, AllScope"
+"%","ForEach-Object","","ReadOnly, AllScope"
+"where","Where-Object","","ReadOnly, AllScope"
+"?","Where-Object","","ReadOnly, AllScope"
+"ac","Add-Content","","ReadOnly, AllScope"
+"clc","Clear-Content","","ReadOnly, AllScope"
+"cli","Clear-Item","","ReadOnly, AllScope"
+"clp","Clear-ItemProperty","","ReadOnly, AllScope"
+"clv","Clear-Variable","","ReadOnly, AllScope"
+"compare","Compare-Object","","ReadOnly, AllScope"
+
+**************
+PS E:\host> Get-Alias r
+#获取当前的别名或者当前Session的别名
+Gets the aliases for the current session.
+CommandType     Name                                               Version    Source                                                                                                                                                                             
+-----------     ----                                               -------    ------                                                                                                                                                                             
+Alias           r -> Invoke-History                                                    
+
+
+*******************************
+ New-Alias -Name g -Value "Get-Help -online"
+ #新建别名
+ Creates a new alias.
+ 
+ ****************************************
+set-Alias -Name g -Value "Get-Help"  
+#修改配置别名
+Creates or changes an alias for a cmdlet or other command in the current PowerShell session.
+
+
