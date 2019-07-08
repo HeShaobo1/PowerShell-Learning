@@ -1,0 +1,4 @@
+#启动选项，启动执行命令
+
+
+powershell -command "& {get-process;pause}"
