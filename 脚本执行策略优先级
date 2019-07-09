@@ -1,0 +1,26 @@
+Powershell调用入口的优先级
+别名：控制台首先会寻找输入是否为一个别名，如果是，执行别名所指的命令。因此我们可以通过别名覆盖任意powershell命令，因为别名的优先级最高。
+
+函数：如果没有找到别名，会继续寻找函数，函数类似别名，只不过它包含了更多的powershell命令。因此可以自定义函数扩充cmdlet 把常用的参数给固化进去。
+
+命令：如果没有找到函数，控制台会继续寻找命令，即cmdlet，powershell的内部命令。
+
+脚本：没有找到命令，继续寻找扩展名为“.ps1”的Powershell脚本。
+
+文件：没有找到脚本，会继续寻找文件，如果没有可用的文件，控制台会抛出异常。
+The term ‘now’ is not recognized as the name of a cmdlet, function, script file, or operable program. Chec
+g of the name, or if a path was included, verify that the path is correct and try again.
+At line:1 char:4
++ now <<<<
++ CategoryInfo : ObjectNotFound: (now:String) [], CommandNotFoundException
++ FullyQualifiedErrorId : CommandNotFoundException
+
+
+初次执行脚本时，可能会碰到一个异常：
+File ” C:\PS\test.ps1″ cannot be loaded because the
+execution of scripts is disabled on this system. Please see
+“get-help about_signing” for more details.
+At line:1 char:10
++ .test.ps1 <<<<
+
+ Set-ExecutionPolicy -ExecutionPolicy AllSigned   
