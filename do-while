@@ -1,0 +1,11 @@
+The Do…While loop construction in Windows PowerShell is a bottom evaluated version of the While loop that I talked about in PowerShell Looping: Using While. The whole idea is that I am going to do something while a condition exists. As an example, here is a recent weather forecast for Charlotte, North Carolina, where the Scripting Wife and I live:
+
+
+Do
+
+{
+
+  Ride bike
+
+} (While (weather –eq ‘sunny’)
+
