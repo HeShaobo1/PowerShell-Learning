@@ -15,3 +15,7 @@ Get-Date;
 } while ($false)
 
 Tuesday, July 30, 2019 5:29:36 PM
+
+
+while ($false) {Get-Date}
+
