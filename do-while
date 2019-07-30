@@ -9,3 +9,9 @@ Do
 
 } (While (weather –eq ‘sunny’)
 
+Examples:
+do {
+Get-Date;
+} while ($false)
+
+Tuesday, July 30, 2019 5:29:36 PM
